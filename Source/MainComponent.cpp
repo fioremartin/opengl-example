@@ -7,11 +7,11 @@ namespace glsl
     {
         return String
         {
-            " #version 150 core                         \n"
+            " #version 120                              \n"
             "                                           \n"
-            " in vec3 aPos;                             \n"
+            " attribute vec3 aPos;                      \n"
             "                                           \n"
-            " out vec4 colour;                          \n"
+            " varying vec4 colour;                      \n"
             "                                           \n"
             " uniform mat4 model;                       \n"
             " uniform mat4 projection;                  \n"
@@ -28,15 +28,14 @@ namespace glsl
     {
         return String
         {
-            "#version 150 core     \n"
-            "out vec4 FragColor;   \n"
-            "                      \n"
-            "in vec4 colour;       \n"
-            "                      \n"
-            "void main()           \n"
-            "{                     \n"
-            "  FragColor = colour; \n"
-            "}                     \n"
+            "#version 120             \n"
+            "                         \n"
+            "varying vec4 colour;     \n"
+            "                         \n"
+            "void main()              \n"
+            "{                        \n"
+            "  gl_FragColor = colour; \n"
+            "}                        \n"
         };
     }
 }
